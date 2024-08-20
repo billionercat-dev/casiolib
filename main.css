@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@font-face {
+    font-family: "CASIO BUTTON";
+    src: url(CASIO-ClassWiz.ttf) format("truetype");
+}
+
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 80%);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+p {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    color: #614949;
+}
+
+h1 {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size:7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.secret {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+}
+
+.Translator {
+    margin: 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-area {
+    display: grid;
+}
+
+.input-area input {
+    width: 35vw;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 50px;
+    border: 2px solid #150e30;
+    color: #150e30;
+    outline: none;
+    overflow: hidden;
+    resize: none;
+    min-height: 1;
+}
+
+.chacount {
+    justify-self: end;
+}
+
+.output {
+    color: white;
+    background-color: white;
+    width: 35vw;
+    height: 51vh;
+    padding: 10px;
+    border-radius: 50px;
+    overflow: auto;
+}
+
+.instruction {
+    font-family: 'CASIO BUTTON';
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.convertbutton {
+    position:absolute;
+    top: 0;
+    left: 0;
+}
