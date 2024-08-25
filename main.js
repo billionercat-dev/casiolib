@@ -121,6 +121,8 @@ function addLowerEnglishInstruc(text) {
         outputp4.textContent += mapping[charArray[i]] + '!!$';
         console.log("huh?");
     }
+    outputp4 += 'o$$$$$$$$$$$$$$$$$12345678901234567$$2[';
+
     console.log(outputp4)
 
     outputarea.appendChild(outputp4);
