@@ -60,7 +60,7 @@ function containsLowercase(text) {
 }
 
 function addLowerEnglishInstruc(text) {
-    const outputp1 = '';
+    outputp1 = '';
     outputp1 = 'q93==qwL13[Qrq[I[q),9q),999r=C!oor=!q.q.!!oRq8R26!!$9o!)+';
     outputinstruc.textContent = outputp1;
 
@@ -122,7 +122,7 @@ function addLowerEnglishInstruc(text) {
         outputp4.textContent += mapping[charArray[i]] + '!!$';
         console.log("huh?");
     }
-    outputp4 += 'o$$$$$$$$$$$$$$$$$12345678901234567$$2[r=';
+    outputp4.textContent += 'o$$$$$$$$$$$$$$$$$12345678901234567$$2[r=';
 
     console.log(outputp4)
 
