@@ -2,6 +2,7 @@ const inputElement = document.getElementById('inputtext');
 const count = document.getElementById('chacount');
 const specificVietnameseRegex = /[àÀảẢãÃáÁạẠăĂằẰẳẲẵẴắẮặẶâÂầẦẩẨẫẪấẤậẬđĐèÈẻẺẽẼéÉẹẸêÊềỀểỂễỄếẾệỆìÌỉỈĩĨíÍịỊòÒỏỎõÕóÓọỌôÔồỒổỔỗỖốỐộỘơƠờỜởỞỡỠớỚợỢùÙủỦũŨúÚụỤưƯừỪửỬữỮứỨựỰỳỲỷỶỹỸýÝỵỴ]/u;
 const outputinstruc = document.getElementById('intruction');
+const loading = document.getElementById('loading');
 let inputValue = '';
 let charCount = 0;
 const outputarea = document.getElementById('outputarea')
@@ -31,23 +32,31 @@ function reset() {
 }
 
 function convert() {
-    reset();
-    console.log(inputValue);
-    //check tiếng việt
-    if (checkVietnamese(inputValue)) {
-        return;
-    }
-
-    //check viết thường
-    if (containsLowercase(inputValue)) {
-        return;
-    }
-
-    //check dòng
-    if (charCount < 18) {
-        addLowerEnglishInstruc(inputValue);
-        return
-    }
+    loading.style.visibility = 'visible';
+    setTimeout(function() {
+        reset();
+        console.log(inputValue);
+        if (inputValue == '') {
+            alert('ko ghi gì thì chuyển đổi kiểu j?');
+            return;
+        }
+        //check tiếng việt
+        if (checkVietnamese(inputValue)) {
+            return;
+        }
+    
+        //check viết thường
+        if (containsLowercase(inputValue)) {
+            return;
+        }
+    
+        //check dòng
+        if (charCount < 18) {
+            addLowerEnglishInstruc(inputValue);
+            loading.style.visibility = 'hidden';
+            return
+        }
+    }, 1000);
 }
 
 function checkVietnamese(text) {
@@ -124,10 +133,11 @@ function addLowerEnglishInstruc(text) {
     }
     outputp4.textContent += 'o$$$$$$$$$$$$$$$$$12345678901234567$$2[r=';
 
-    console.log(outputp4)
+    console.log(outputp4.textContent);
 
     outputarea.appendChild(outputp4);
     outputp4.style.maxWidth = "100%";
     outputp4.style.wordWrap = "break-word";
     outputp4.style.fontFamily = 'CASIO BUTTON';
 }
+reset();
