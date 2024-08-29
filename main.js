@@ -19,6 +19,7 @@ inputElement.addEventListener('input', increseNum);
 increseNum();
 
 function reset() {
+    outputinstruc.style.fontFamily = '"Ubuntu", sans-serif';
     const divElement = document.getElementById("outputarea");
     const idToKeep = "intruction";
     const childNodes = Array.from(divElement.childNodes); // Convert NodeList to Array
@@ -37,16 +38,21 @@ function convert() {
         reset();
         console.log(inputValue);
         if (inputValue == '') {
-            alert('ko ghi gì thì chuyển đổi kiểu j?');
+            loading.style.visibility = 'hidden';
+            outputinstruc.textContent = 'ERROR: ko ghi gì thì chuyển đổi kiểu j?';
             return;
         }
         //check tiếng việt
         if (checkVietnamese(inputValue)) {
+            loading.style.visibility = 'hidden';
+            outputinstruc.textContent = 'ERROR: chx hộ trợ tiếng việt';
             return;
         }
     
         //check viết thường
         if (containsLowercase(inputValue)) {
+            loading.style.visibility = 'hidden';
+            outputinstruc.textContent = 'ERROR: chx hộ trợ viết thường';
             return;
         }
     
@@ -56,6 +62,8 @@ function convert() {
             loading.style.visibility = 'hidden';
             return
         }
+        loading.style.visibility = 'hidden';
+        outputinstruc.textContent = 'ERROR: chx hộ trợ quá 1 dòng';
     }, 1000);
 }
 
@@ -71,6 +79,7 @@ function containsLowercase(text) {
 function addLowerEnglishInstruc(text) {
     outputp1 = '';
     outputp1 = 'q93==qwL13[Qrq[I[q),9q),999r=C!oor=!q.q.!!oRq8R26!!$9o!)+';
+    outputinstruc.style.fontFamily = 'CASIO BUTTON';
     outputinstruc.textContent = outputp1;
 
     const outputp2 = document.createElement("p");

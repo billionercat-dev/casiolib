@@ -82,15 +82,15 @@ h1 {
 }
 
 .instruction {
-    font-family: 'CASIO BUTTON';
     max-width: 100%;
     word-wrap: break-word;
 }
 
 .convertbutton {
-    position:absolute;
-    top: 0;
-    left: 0;
+  height: 5vh;
+  width: 10vh;
+  margin: 2vh;
+  border-radius: 15px;
 }
 
 .loading-screen {
